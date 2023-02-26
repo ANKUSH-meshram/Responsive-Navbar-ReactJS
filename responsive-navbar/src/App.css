@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'Oleo Script', cursive;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1c1c1c;
+  color: rgb(230, 226, 221);
+}
+
+
+.nav-elements ul a.active {
+  color: #474545;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-elements ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #cac6c6;
+}
+
+.heading{
+  text-align: center;
+  margin-top: 13%;
+  font-size: 120px;
+  letter-spacing: 4px;
+  font-family: Oleo Script;
+  background: linear-gradient(
+    to right, #f32170, #8e5a37,
+    #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@media (max-width: 600px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-elements {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    /* background-color: #fef7e5; */
+    background-color: #fef7e5b6;
+    width: 0px;
+    height: calc(100vh - 300px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nav-elements.active {
+    width: 250px;
+  }
+
+  .nav-elements ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding-left: 5%;
+  }
+
+  .nav-elements ul li {
+    margin-right: unset;
+    margin-top: 10px;
+    font-size: larger;
+    color: #737373;
+  }
+
+  .heading{
+    margin-top: 47%;
+    font-size: 60px;
+    letter-spacing: 4px;
+    line-height: 100%;
+    font-family: Oleo Script;
+  }
+}
